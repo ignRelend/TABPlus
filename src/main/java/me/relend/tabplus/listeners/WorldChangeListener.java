@@ -4,12 +4,12 @@ import me.clip.placeholderapi.PlaceholderAPI;
 import me.relend.tabplus.util.Util;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.player.PlayerJoinEvent;
+import org.bukkit.event.player.PlayerChangedWorldEvent;
 
-public class JoinListener implements Listener {
+public class WorldChangeListener implements Listener {
 
     @EventHandler
-    public void onJoin(PlayerJoinEvent event) {
+    public void onWorldChange(PlayerChangedWorldEvent event) {
         if (Util.PLACEHOLDERAPI) {
             event.getPlayer().setPlayerListHeader(PlaceholderAPI.setPlaceholders(event.getPlayer(), Util.color(Util.getHeader(event.getPlayer().getWorld()))));
             event.getPlayer().setPlayerListFooter(PlaceholderAPI.setPlaceholders(event.getPlayer(), Util.color(Util.getFooter(event.getPlayer().getWorld()))));
@@ -18,4 +18,5 @@ public class JoinListener implements Listener {
             event.getPlayer().setPlayerListFooter(Util.color(Util.getFooter(event.getPlayer().getWorld())));
         }
     }
+
 }

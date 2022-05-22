@@ -36,11 +36,11 @@ public class TABCommand implements CommandExecutor {
                         }
                         for (Player p : Bukkit.getOnlinePlayers()) {
                             if (Util.PLACEHOLDERAPI) {
-                                p.setPlayerListHeader(PlaceholderAPI.setPlaceholders(p, Util.color(Util.getHeader())));
-                                p.setPlayerListFooter(PlaceholderAPI.setPlaceholders(p, Util.color(Util.getFooter())));
+                                p.setPlayerListHeader(PlaceholderAPI.setPlaceholders(p, Util.color(Util.getHeader(p.getWorld()))));
+                                p.setPlayerListFooter(PlaceholderAPI.setPlaceholders(p, Util.color(Util.getFooter(p.getWorld()))));
                             } else {
-                                p.setPlayerListHeader(Util.color(Util.getHeader()));
-                                p.setPlayerListFooter(Util.color(Util.getFooter()));
+                                p.setPlayerListHeader(Util.color(Util.getHeader(p.getWorld())));
+                                p.setPlayerListFooter(Util.color(Util.getFooter(p.getWorld())));
                             }
                         }
                     } else if (args[0].equalsIgnoreCase("info")) {

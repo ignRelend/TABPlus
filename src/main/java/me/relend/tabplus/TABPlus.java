@@ -25,6 +25,7 @@ public class TABPlus extends JavaPlugin {
 
     private void registerListeners() {
         getServer().getPluginManager().registerEvents(new JoinListener(), this);
+        getServer().getPluginManager().registerEvents(new WorldChangeListener(), this);
     }
 
     private void registerCommands() {

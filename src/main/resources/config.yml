@@ -2,6 +2,7 @@
 # TABPlus by Relend #
 #-------------------#
 
+# Default tablist
 header:
   - "hi"
   - "there"
@@ -9,3 +10,17 @@ header:
 footer:
   - "good"
   - "bye"
+
+# Worlds tablist will override the default, if no world-specific is set, it will use default.
+worlds:
+  world:
+    header:
+      - "hi there"
+    footer:
+      - "hello"
+      - "there"
+  world_nether:
+    header:
+      - "you are in the nether"
+    footer:
+      - "nether"
