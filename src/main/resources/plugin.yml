@@ -1,0 +1,8 @@
+main: me.relend.tabplus.TABPlus
+name: TABPlus
+version: 0.0.1
+softdepend:
+  - PlaceholderAPI
+commands:
+  tab:
+    description: Reload or view plugin information
