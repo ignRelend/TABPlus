@@ -3,6 +3,7 @@ package me.relend.tabplus;
 import me.clip.placeholderapi.PlaceholderAPI;
 import me.relend.tabplus.commands.*;
 import me.relend.tabplus.listeners.*;
+import me.relend.tabplus.util.Util;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class TABPlus extends JavaPlugin {
@@ -13,6 +14,7 @@ public class TABPlus extends JavaPlugin {
             registerConfig();
             registerCommands();
             registerListeners();
+            Util.PLACEHOLDERAPI = true;
         } else {
             getLogger().warning("PlaceholderAPI not found. You cannot use placeholders!");
             registerConfig();

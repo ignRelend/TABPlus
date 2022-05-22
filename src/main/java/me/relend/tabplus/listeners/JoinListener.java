@@ -10,7 +10,12 @@ public class JoinListener implements Listener {
 
     @EventHandler
     public void onJoin(PlayerJoinEvent event) {
-        event.getPlayer().setPlayerListHeader(PlaceholderAPI.setPlaceholders(event.getPlayer(), Util.getHeader()));
-        event.getPlayer().setPlayerListFooter(PlaceholderAPI.setPlaceholders(event.getPlayer(), Util.getFooter()));
+        if (Util.PLACEHOLDERAPI) {
+            event.getPlayer().setPlayerListHeader(PlaceholderAPI.setPlaceholders(event.getPlayer(), Util.getHeader()));
+            event.getPlayer().setPlayerListFooter(PlaceholderAPI.setPlaceholders(event.getPlayer(), Util.getFooter()));
+        } else {
+            event.getPlayer().setPlayerListHeader(Util.getHeader());
+            event.getPlayer().setPlayerListFooter(Util.getFooter());
+        }
     }
 }

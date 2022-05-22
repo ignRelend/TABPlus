@@ -7,6 +7,10 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public class Util {
 
+    public static final String VERSION = "v1.0.0";
+    public static final String AUTHOR = "Relend";
+    public static boolean PLACEHOLDERAPI = false;
+
     private static final TABPlus plugin = JavaPlugin.getPlugin(TABPlus.class);
     public static String color(String color) {
         return ChatColor.translateAlternateColorCodes('&', color);

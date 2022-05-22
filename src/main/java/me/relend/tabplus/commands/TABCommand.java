@@ -28,17 +28,23 @@ public class TABCommand implements CommandExecutor {
             } else {
                 if (args[0] != null) {
                     if (args[0].equalsIgnoreCase("reload")) {
-                        plugin.reloadConfig();
-                        sender.sendMessage(Util.color("&aSuccessfully reloaded TABPlus config!"));
-                        if (sender instanceof Player player) {
-                            player.playSound(player.getLocation(), Sound.BLOCK_NOTE_BLOCK_PLING, 1f, 1f);
+                        try {
+                            plugin.reloadConfig();
+                            sender.sendMessage(Util.color("&aSuccessfully reloaded TABPlus config!"));
+                        } catch (Exception e) {
+                            sender.sendMessage(Util.color("&cError reloading TABPlus config!"));
                         }
                         for (Player p : Bukkit.getOnlinePlayers()) {
-                            p.setPlayerListHeader(PlaceholderAPI.setPlaceholders(p, Util.color(Util.getHeader())));
-                            p.setPlayerListFooter(PlaceholderAPI.setPlaceholders(p, Util.color(Util.getFooter())));
+                            if (Util.PLACEHOLDERAPI) {
+                                p.setPlayerListHeader(PlaceholderAPI.setPlaceholders(p, Util.color(Util.getHeader())));
+                                p.setPlayerListFooter(PlaceholderAPI.setPlaceholders(p, Util.color(Util.getFooter())));
+                            } else {
+                                p.setPlayerListHeader(Util.color(Util.getHeader()));
+                                p.setPlayerListFooter(Util.color(Util.getFooter()));
+                            }
                         }
                     } else if (args[0].equalsIgnoreCase("info")) {
-                        sender.sendMessage(Util.color("plugin created by relend"));
+                        sender.sendMessage(Util.color("&2&lTABPlus &a" + Util.VERSION + " &7by &a" + Util.AUTHOR));
                     } else {
                         sender.sendMessage(Util.color("&c/tab <reload|info>"));
                     }
