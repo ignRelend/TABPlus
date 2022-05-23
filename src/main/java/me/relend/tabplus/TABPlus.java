@@ -1,6 +1,5 @@
 package me.relend.tabplus;
 
-import me.clip.placeholderapi.PlaceholderAPI;
 import me.relend.tabplus.commands.*;
 import me.relend.tabplus.listeners.*;
 import me.relend.tabplus.util.Util;

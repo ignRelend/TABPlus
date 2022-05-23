@@ -1,6 +1,6 @@
 # TABPlus
 ## Todo List:
-- Tab sorting based on group
+- Nothing now
 
 ## Features:
 - Simple to use config
